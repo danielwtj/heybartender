@@ -2,10 +2,11 @@ import React from 'react'
 import { ScrollView, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { Linking } from 'expo'
 import { material } from 'react-native-typography'
+import styles from '../style/style'
 
 export default function AboutScreen(props) {
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={[styles.container, {paddingHorizontal: 15}]}>
             <Text style={material.display1}>Hey, Bartender!</Text>
             <Text style={[material.title,{marginBottom: 15}]}>App Created by Daniel Thompson</Text>
             <Text style={material.subheading}>Privacy Policy:</Text>
@@ -26,12 +27,4 @@ AboutScreen.navigationOptions = ({navigation}) => ({
     headerStyle: {backgroundColor: '#f8debd', shadowColor: 'transparent'},
     headerTintColor: '#f8f8f2',
     headerTitleStyle: material.headlineWhite
-})
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#f8debd',
-        paddingHorizontal: 15,
-    }
 })
