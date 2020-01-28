@@ -335,7 +335,7 @@ const recipes = [
     },
     {
         key: '12',
-        title: 'Cosmopolitan',
+        title: 'Cosmo',
         icon: 'cocktail',
         ingredients: [
             {
@@ -489,8 +489,176 @@ const recipes = [
                 name: 'Rich (2:1) Simple Syrup',
             },
         ],
-        instructions: 'Prepare chilled couple. Combine all ingredients in shaker tin and top with ice. Shake vigorously for 10 seconds and double strain into coupe. Garnish with lime wheel.',
-    }
+        instructions: 'Prepare chilled coupe. Combine all ingredients in shaker tin and top with ice. Shake vigorously for 10 seconds and double strain into coupe. Garnish with lime wheel.',
+    },
+    {
+        id: '18',
+        title: 'Moscow Mule',
+        icon: 'rocks',
+        ingredients: [
+            {
+                quantity: 1.5,
+                unit: Units.OUNCE,
+                name: 'Vodka',
+            },
+            {
+                quantity: .5,
+                unit: Units.OUNCE,
+                name: 'Lime Juice',
+            },
+            {
+                quantity: 4,
+                unit: Units.OUNCE,
+                name: 'Ginger Beer',
+            },
+        ],
+        instructions: 'Combine all ingredients in a chilled copper mule mug, then top with ice. Garnish with lime wheel.',
+    },
+    {
+        id: '19',
+        title: 'Martinez',
+        icon: 'cocktail',
+        ingredients: [
+            {
+                quantity: 1.5,
+                unit: Units.OUNCE,
+                name: 'Old Tom Gin',
+            },
+            {
+                quantity: 1.5,
+                unit: Units.OUNCE,
+                name: 'Sweet Vermouth',
+            },
+            {
+                quantity: .25,
+                unit: Units.OUNCE,
+                name: 'Maraschino Liqueur',
+            },
+            {
+                quantity: 2,
+                unit: Units.DASH,
+                name: 'Boker\'s Bitters',
+            },
+        ],
+        instructions: 'Prepare chilled cocktail glass. Combine all ingredients in stirring glass, top with ice, and stir 20 seconds. Strain into coupe, garnish with orange twist.',
+    },
+    {
+        id: '20',
+        title: 'Amaretto Sour',
+        icon: 'rocks',
+        ingredients: [
+            {
+                quantity: 1.5,
+                unit: Units.OUNCE,
+                name: 'Amaretto',
+            },
+            {
+                quantity: .5,
+                unit: Units.OUNCE,
+                name: 'High-Proof Bourbon',
+            },
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Lemon Juice',
+            },
+            {
+                quantity: .5,
+                unit: Units.OUNCE,
+                name: 'Egg White',
+            },
+        ],
+        instructions: 'Prepare chilled double rocks glass. Combine all ingredients, dry shake vigorously, then add ice and shake vigorously for 10 seconds more. Double strain into rocks glass and top with ice. Garnish with skewered lemon twist and cherry.',
+    },
+    {
+        id: '21',
+        title: 'Vieux Carre',
+        icon: 'rocks',
+        ingredients: [
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Rye Whiskey',
+            },
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Cognac',
+            },
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Sweet Vermouth',
+            },
+            {
+                quantity: 1,
+                unit: Units.BARSPOON,
+                name: 'Benedictine'
+            },
+        ],
+        instructions: 'Prepare double rocks glass with large (2x2) cube. Combine all ingredients in mixing glass, add ice, and stir for 15 seconds. Strain over large cube and garnish with lemon twist.',
+    },
+    {
+        id: '22',
+        title: 'Penicillin',
+        icon: 'rocks',
+        ingredients: [
+            {
+                quantity: 2,
+                unit: Units.OUNCE,
+                name: 'Blended Scotch',
+            },
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Lemon Juice'
+            },
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Honey-Ginger Syrup'
+            },
+            {
+                quantity: .25,
+                unit: Units.OUNCE,
+                name: 'Islay Single-Malt Scotch'
+            },
+        ],
+        instructions: 'Prepare chilled double rocks glass. Combine blended scotch, lemon juice, and honey-ginger srup in shaker tin, add ice, and shake for 10 seconds. Strain over fresh ice, then float Islay Single-Malt. Garnish with skewered candied ginger. \n\nHONEY-GINGER SYRUP: Combine 1 cup honey, 1 cup water, and 6-inch piece of peeled ginger in saucepan. Simmer for 5 minutes, refrigerate overnight, then strain.',
+    },
+    {
+        id: '23',
+        title: 'Corpse Reviver #2',
+        icon: 'cocktail',
+        ingredients: [
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Dry Gin',
+            },
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Triple Sec',
+            },
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Lillet Blanc',
+            },
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Lemon Juice',
+            },
+            {
+                quantity: 1,
+                unit: Units.DASH,
+                name: 'Absinthe',
+            },
+        ],
+        instructions: 'Prepare chilled cocktail glass. Combine all ingredients in shaker tin, add ice, and shake vigorously for 10 seconds. Strain into prepared cocktail glass and garnish with orange twist.',
+    },
 ]
 
 export default recipes
