@@ -10,6 +10,7 @@ import Recipes from '../assets/standardRecipes'
 
 export default function HomeScreen(props) {
     const [searchTerm, setSearchTerm] = useState('')
+    const [allRecipes, setAllRecipes] = useState(Recipes.sort((a, b) => (a.title.localeCompare(b.title))))
     return (
         <View style={styles.container}>
             <View style={{flexDirection: 'row', marginHorizontal: 30, marginBottom: 10}}>
@@ -21,7 +22,7 @@ export default function HomeScreen(props) {
             </View>
             <Input placeholder='let me get aaaa......' containerStyle={styles.searchContainer} inputContainerStyle={styles.searchInputContainer} onChangeText={text => setSearchTerm(text)} value={searchTerm} clearButtonMode='while-editing' />
             <FlatList
-                data={Recipes.filter(item => item.title.includes(searchTerm))}
+                data={allRecipes.filter(item => item.title.includes(searchTerm))}
                 renderItem = { ({item}) => (<TouchableOpacity onPress={()=> {props.navigation.navigate('Detail', {recipe: item})}}><SmallCard title={item.title} icon={item.icon} /></TouchableOpacity>)}
                 numColumns = { 2 }
                 contentContainerStyle = {{alignItems: 'center'}}
