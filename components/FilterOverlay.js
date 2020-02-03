@@ -3,6 +3,7 @@ import { View, Text, Picker} from 'react-native'
 import { Overlay, Button } from 'react-native-elements'
 import styles from '../style/style'
 import { material } from 'react-native-typography'
+import { Spirits, Methods } from '../assets/standardRecipes'
 
 export default function FilterOverlay(props) {
     const [primarySpirit, setPrimarySpirit] = useState(props.filters.primarySpirit)
@@ -22,6 +23,8 @@ export default function FilterOverlay(props) {
                     <Picker.Item label="Whiskey" value="whiskey" />
                     <Picker.Item label="Rum" value="rum" />
                     <Picker.Item label="Aperitif" value="aperitif" />
+                    <Picker.Item label="Brandy" value="brandy" />
+                    <Picker.Item label="Other" value="other" />
                 </Picker>
                 <Text style={material.title}>Method</Text>
                 <Picker selectedValue={method} onValueChange={(value) => setMethod(value)}>

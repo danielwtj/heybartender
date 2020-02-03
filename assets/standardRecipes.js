@@ -6,11 +6,31 @@ export const Units = {
     DROP: 'Drop',
 }
 
+export const Methods = {
+    STIRRED: 'stirred',
+    SHAKEN: 'shaken',
+    BUILT: 'built',
+}
+
+export const Spirits = {
+    WHISKEY: 'whiskey',
+    VODKA: 'vodka',
+    GIN: 'gin',
+    RUM: 'rum',
+    TEQUILA: 'tequila',
+    MEZCAL: 'mezcal',
+    APERITIF: 'aperitif',
+    BRANDY: 'brandy',
+    OTHER: 'other',
+}
+
 const recipes = [
     {
         key: '0',
         title: 'Old Fashioned',
         icon: 'rocks',
+        method: Methods.STIRRED,
+        primarySpirit: Spirits.WHISKEY,
         ingredients: [
             {
                 quantity: 2,
@@ -39,6 +59,8 @@ const recipes = [
         key: '1',
         title: 'Manhattan',
         icon: 'cocktail',
+        method: Methods.STIRRED,
+        primarySpirit: Spirits.WHISKEY,
         ingredients: [
             {
                 quantity: 2,
@@ -63,6 +85,8 @@ const recipes = [
         key: '2',
         title: 'Whiskey Sour',
         icon: 'rocks',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.WHISKEY,
         ingredients: [
             {
                 quantity: 2,
@@ -91,6 +115,8 @@ const recipes = [
         key: '3',
         title: 'Negroni',
         icon: 'rocks',
+        method: Methods.STIRRED,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: 1,
@@ -114,6 +140,8 @@ const recipes = [
         key: '4',
         title: 'Boulevardier',
         icon: 'rocks',
+        method: Methods.STIRRED,
+        primarySpirit: Spirits.WHISKEY,
         ingredients: [
             {
                 quantity: 1.5,
@@ -137,6 +165,8 @@ const recipes = [
         key: '5',
         title: 'Pisco Sour',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.OTHER,
         ingredients: [
             {
                 quantity: 2,
@@ -170,6 +200,8 @@ const recipes = [
         key: '6',
         title: 'Margarita',
         icon: 'rocks',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.TEQUILA,
         ingredients: [
             {
                 quantity: 2,
@@ -198,6 +230,8 @@ const recipes = [
         key: '7',
         title: 'Tom Collins',
         icon: 'collins',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: 1.5,
@@ -226,6 +260,8 @@ const recipes = [
         key: '8',
         title: 'Aviation',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: 2,
@@ -259,6 +295,8 @@ const recipes = [
         key: '9',
         title: 'Bee\'s Knees',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: 2,
@@ -282,6 +320,8 @@ const recipes = [
         id: '10',
         title: 'Paper Plane',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.WHISKEY,
         ingredients: [
             {
                 quantity: .75,
@@ -310,6 +350,8 @@ const recipes = [
         key: '11',
         title: 'Naked and Famous',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.MEZCAL,
         ingredients: [
             {
                 quantity: .75,
@@ -338,6 +380,8 @@ const recipes = [
         key: '12',
         title: 'Cosmo',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.VODKA,
         ingredients: [
             {
                 quantity: 2,
@@ -366,6 +410,8 @@ const recipes = [
         id: '13',
         title: 'Vesper',
         icon: 'cocktail',
+        method: Methods.STIRRED,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: 1.5,
@@ -389,6 +435,8 @@ const recipes = [
         id: '14',
         title: 'Last Word',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: .75,
@@ -417,6 +465,8 @@ const recipes = [
         id: '15',
         title: '20th Century',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: 1.5,
@@ -445,6 +495,8 @@ const recipes = [
         id: '16',
         title: 'French 75',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: 1,
@@ -473,6 +525,8 @@ const recipes = [
         id: '17',
         title: 'Gimlet',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: 2,
@@ -496,6 +550,8 @@ const recipes = [
         id: '18',
         title: 'Moscow Mule',
         icon: 'rocks',
+        method: Methods.BUILT,
+        primarySpirit: Spirits.VODKA,
         ingredients: [
             {
                 quantity: 1.5,
@@ -519,6 +575,8 @@ const recipes = [
         id: '19',
         title: 'Martinez',
         icon: 'cocktail',
+        method: Methods.STIRRED,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: 1.5,
@@ -547,6 +605,8 @@ const recipes = [
         id: '20',
         title: 'Amaretto Sour',
         icon: 'rocks',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.OTHER,
         ingredients: [
             {
                 quantity: 1.5,
@@ -575,6 +635,8 @@ const recipes = [
         id: '21',
         title: 'Vieux Carre',
         icon: 'rocks',
+        method: Methods.STIRRED,
+        primarySpirit: Spirits.WHISKEY,
         ingredients: [
             {
                 quantity: .75,
@@ -603,6 +665,8 @@ const recipes = [
         id: '22',
         title: 'Penicillin',
         icon: 'rocks',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.WHISKEY,
         ingredients: [
             {
                 quantity: 2,
@@ -631,6 +695,8 @@ const recipes = [
         id: '23',
         title: 'Corpse Reviver #2',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: .75,
@@ -664,6 +730,8 @@ const recipes = [
         id: '24',
         title: 'Hemingway Daquiri',
         icon: 'cocktail',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.RUM,
         ingredients: [
             {
                 quantity: 2,
@@ -692,6 +760,8 @@ const recipes = [
         id: '25',
         title: 'Ramos Gin Fizz',
         icon: 'collins',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.GIN,
         ingredients: [
             {
                 quantity: 2,
