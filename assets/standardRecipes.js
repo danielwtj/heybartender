@@ -3,6 +3,7 @@ export const Units = {
     OUNCE: 'Ounce',
     ML: 'mL',
     DASH: 'Dash',
+    DROP: 'Drop',
 }
 
 const recipes = [
@@ -658,6 +659,77 @@ const recipes = [
             },
         ],
         instructions: 'Prepare chilled cocktail glass. Combine all ingredients in shaker tin, add ice, and shake vigorously for 10 seconds. Strain into prepared cocktail glass and garnish with orange twist.',
+    },
+    {
+        id: '24',
+        title: 'Hemingway Daquiri',
+        icon: 'cocktail',
+        ingredients: [
+            {
+                quantity: 2,
+                unit: Units.OUNCE,
+                name: 'White Rum',
+            },
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Lime Juice',
+            },
+            {
+                quantity: .5,
+                unit: Units.OUNCE,
+                name: 'Grapefruit Juice',
+            },
+            {
+                quantity: .5,
+                unit: Units.OUNCE,
+                name: 'Maraschino Liqueur',
+            },
+        ],
+        instructions: 'Prepare chilled cocktail glass. Combine all ingredients in shaker tin, add ice, and shake vigorously for 10 seconds. Strain into prepared cocktail glass and garnish with lime wheel.',
+    },
+    {
+        id: '25',
+        title: 'Ramos Gin Fizz',
+        icon: 'collins',
+        ingredients: [
+            {
+                quantity: 2,
+                unit: Units.OUNCE,
+                name: 'London Dry Gin',
+            },
+            {
+                quantity: 1.5,
+                unit: Units.OUNCE,
+                name: 'Club Soda',
+            },
+            {
+                quantity: .75,
+                unit: Units.OUNCE,
+                name: 'Heavy Cream',
+            },
+            {
+                quantity: .5,
+                unit: Units.OUNCE,
+                name: 'Lime Juice',
+            },
+            {
+                quantity: .5,
+                unit: Units.OUNCE,
+                name: 'Lemon Juice',
+            },
+            {
+                quantity: 5,
+                unit: Units.DROP,
+                name: 'Orange Flower Water',
+            },
+            {
+                quantity: .5,
+                unit: Units.OUNCE,
+                name: 'Egg White',
+            },
+        ],
+        instructions: 'Add club soda to chilled collins glass. Combine all remaining ingredients in shaker tin, then dry shake vigorously for 10 seconds. Add two 1.25-inch ice cubes and shake until they disintegrate completely, then pour over club soda. Pause to settle for two minutes when head reaches the rim of the glass, then top with remaining drink to achieve a lofty head of foam.',
     },
 ]
 
