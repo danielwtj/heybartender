@@ -14,13 +14,23 @@ export default StyleSheet.create({
     searchContainer: {
         backgroundColor: '#f8f8f2',
         borderRadius: 10,
-        marginHorizontal: 15,
-        marginBottom: 10,
+        marginRight: 5,
         paddingVertical: 2,
-        width: 'auto',
+        flex: 1,
     },
     searchInputContainer: {
         borderBottomWidth: 0,
+    },
+    filterButton: {
+        backgroundColor: '#f8f8f2',
+        borderRadius: 10,
+        padding: 5,
+        marginLeft: 5,
+    },
+    searchFilterRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginHorizontal: 15,
     },
     dropShadow: {
         shadowColor: '#ccc',
