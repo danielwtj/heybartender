@@ -7,21 +7,21 @@ export const Units = {
 }
 
 export const Methods = {
-    STIRRED: 'stirred',
-    SHAKEN: 'shaken',
-    BUILT: 'built',
+    STIRRED: 'Stirred',
+    SHAKEN: 'Shaken',
+    BUILT: 'Built',
 }
 
 export const Spirits = {
-    WHISKEY: 'whiskey',
-    VODKA: 'vodka',
-    GIN: 'gin',
-    RUM: 'rum',
-    TEQUILA: 'tequila',
-    MEZCAL: 'mezcal',
-    APERITIF: 'aperitif',
-    BRANDY: 'brandy',
-    OTHER: 'other',
+    WHISKEY: 'Whiskey',
+    VODKA: 'Vodka',
+    GIN: 'Gin',
+    RUM: 'Rum',
+    TEQUILA: 'Tequila',
+    MEZCAL: 'Mezcal',
+    APERITIF: 'Aperitif',
+    BRANDY: 'Brandy',
+    OTHER: 'Other',
 }
 
 const recipes = [
