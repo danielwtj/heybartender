@@ -4,6 +4,7 @@ import { createAppContainer } from 'react-navigation'
 import HomeScreen from './screens/HomeScreen'
 import DetailScreen from './screens/DetailScreen'
 import AboutScreen from './screens/AboutScreen'
+import NewRecipeScreen from './screens/NewRecipeScreen'
 
 const MainStack = createStackNavigator({
   Home: {
@@ -18,6 +19,9 @@ const MainStack = createStackNavigator({
   About: {
     screen: AboutScreen,
   },
+  NewRecipe: {
+    screen: NewRecipeScreen,
+  }
 }, {
   headerMode: 'screen',
 })
