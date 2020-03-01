@@ -801,6 +801,36 @@ const recipes = [
         ],
         instructions: 'Add club soda to chilled collins glass. Combine all remaining ingredients in shaker tin, then dry shake vigorously for 10 seconds. Add two 1.25-inch ice cubes and shake until they disintegrate completely, then pour over club soda. Pause to settle for two minutes when head reaches the rim of the glass, then top with remaining drink to achieve a lofty head of foam.',
     },
+    {
+        id: '26',
+        title: 'Green Tea',
+        icon: 'rocks',
+        method: Methods.SHAKEN,
+        primarySpirit: Spirits.WHISKEY,
+        ingredients: [  
+            {
+                quantity: .5,
+                unit: Units.OUNCE,
+                name: 'Jameson',
+            },
+            {
+                quantity: .5,
+                unit: Units.OUNCE,
+                name: 'Peach Schnapps',
+            },
+            {
+                quantity: .25,
+                unit: Units.OUNCE,
+                name: 'Lemon Juice',
+            },
+            {
+                quantity: .25,
+                unit: Units.OUNCE,
+                name: 'Simple Syrup',
+            },
+        ],
+        instructions: 'Combine all ingredients in shaker tin and shake vigorously to chill. Strain into shot glass.',
+    },
 ]
 
 export default recipes
