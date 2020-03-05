@@ -3,13 +3,20 @@ import Constants from 'expo-constants'
 
 const TILESIZE = Dimensions.get('window').width * .4
 
+const COLORS = {
+    offWhite: '#fafafa',
+}
+
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f8debd',
+        backgroundColor: COLORS.offWhite,
     },
     statusBarPadding: {
         paddingTop: Constants.statusBarHeight,
+    },
+    listItemCell: {
+        backgroundColor: COLORS.offWhite,
     },
     searchContainer: {
         backgroundColor: '#f8f8f2',

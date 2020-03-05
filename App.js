@@ -5,13 +5,21 @@ import HomeScreen from './screens/HomeScreen'
 import DetailScreen from './screens/DetailScreen'
 import AboutScreen from './screens/AboutScreen'
 import NewRecipeScreen from './screens/NewRecipeScreen'
+import RecipeListScreen from './screens/RecipeListScreen'
+import CategoryFilterScreen from './screens/CategoryFilterScreen'
 
 const MainStack = createStackNavigator({
   Home: {
     screen: HomeScreen,
     navigationOptions: {
-      headerShown: false,
+      title: 'Bartender\'s Pocket Guide'
     }
+  },
+  RecipeList: {
+    screen: RecipeListScreen,
+  },
+  CategoryFilter: {
+    screen: CategoryFilterScreen,
   },
   Detail: {
     screen: DetailScreen,
