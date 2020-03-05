@@ -6,7 +6,7 @@ import IngredientRow from '../components/IngredientRow'
 import { Ionicons } from 'react-native-vector-icons'
 import Dropdown from '../components/Dropdown'
 import { Spirits, Methods } from '../assets/standardRecipes'
-import { ButtonGroup } from 'react-native-elements'
+import { ButtonGroup, Divider } from 'react-native-elements'
 import drinkIcons from '../assets/drinkIcons'
 
 export default function NewRecipeScreen(props) {
@@ -49,18 +49,19 @@ export default function NewRecipeScreen(props) {
     },[drinkName, method, primarySpirit, selectedIcon, instructions, ingredientRows])
     return (
         <ScrollView style={styles.container}>
-            <View style={[styles.whiteRoundedBox, styles.dropShadow]}>
+            <View style={{paddingHorizontal: 20}}>
                 <Text style={material.headline}>Drink Name:</Text>
                 <TextInput placeholder='Drink Name' value={drinkName} onChangeText={(value) => {setDrinkName(value)}} style={material.subheading}/>
             </View>
-            <View style={[styles.whiteRoundedBox, styles.dropShadow]}>
+            <Divider style={{marginVertical: 10}}/>
+            <View style={{paddingHorizontal: 20}}>
                 <Text style={material.headline}>Metadata:</Text>
-                <View style={{flexDirection: 'row'}}>
+                <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Text style={material.subheading}>Primary Spirit</Text>
                     <View style={{flex: 1}}></View>
                     <Dropdown values={Object.values(Spirits)} style={{width: 150}} placeholder='Select' selectedValue={primarySpirit} onValueChange={setPrimarySpirit} />
                 </View>
-                <View style={{flexDirection: 'row'}}>
+                <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <Text style={material.subheading}>Method of Prep</Text>
                     <View style={{flex: 1}}></View>
                     <Dropdown values={Object.values(Methods)} style={{width: 150}} placeholder='Select' selectedValue={method} onValueChange={setMethod} />
@@ -72,7 +73,8 @@ export default function NewRecipeScreen(props) {
                     onPress = {setSelectedIcon}
                 />
             </View>
-            <View style={[styles.whiteRoundedBox, styles.dropShadow]}>
+            <Divider style={{marginVertical: 10}}/>
+            <View style={{paddingHorizontal: 20}}>
                 <Text style={material.headline}>Ingredients:</Text>
                 {ingredientRows}
                 <View style={{flexDirection:'row-reverse', marginTop: 10}}>
@@ -81,7 +83,8 @@ export default function NewRecipeScreen(props) {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={[styles.whiteRoundedBox, styles.dropShadow]}>
+            <Divider style={{marginVertical: 10}}/>
+            <View style={{paddingHorizontal: 20}}>
                 <Text style={material.headline}>Instructions:</Text>
                 <TextInput
                     multiline
@@ -99,14 +102,11 @@ export default function NewRecipeScreen(props) {
 
 NewRecipeScreen.navigationOptions = ({navigation}) => ({
     title: 'New Recipe',
-    headerStyle: {backgroundColor: '#f8debd', shadowColor: 'transparent'},
-    headerTintColor: '#f8f8f2',
-    headerTitleStyle: material.headlineWhite,
+    headerTitleStyle: material.headline,
     headerRight: () => (
         <Button
             onPress = {() => {navigation.getParam('save')()}}
             title = 'Save'
-            color = 'white'
         />
     )
 })
