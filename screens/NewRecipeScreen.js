@@ -7,6 +7,7 @@ import { Ionicons } from 'react-native-vector-icons'
 import Dropdown from '../components/Dropdown'
 import { Spirits, Methods } from '../assets/standardRecipes'
 import { ButtonGroup, Divider } from 'react-native-elements'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import drinkIcons from '../assets/drinkIcons'
 
 export default function NewRecipeScreen(props) {
@@ -48,57 +49,55 @@ export default function NewRecipeScreen(props) {
         props.navigation.setParams({save: _saveRecipeObject})
     },[drinkName, method, primarySpirit, selectedIcon, instructions, ingredientRows])
     return (
-        <KeyboardAvoidingView behavior='position' style={styles.container} keyboardVerticalOffset={100}>
-            <ScrollView>
-                <View style={{paddingHorizontal: 20}}>
-                    <Text style={material.headline}>Drink Name:</Text>
-                    <TextInput placeholder='Drink Name' value={drinkName} onChangeText={(value) => {setDrinkName(value)}} style={material.subheading}/>
+        <KeyboardAwareScrollView>
+            <View style={{paddingHorizontal: 20}}>
+                <Text style={material.headline}>Drink Name:</Text>
+                <TextInput placeholder='Drink Name' value={drinkName} onChangeText={(value) => {setDrinkName(value)}} style={material.subheading}/>
+            </View>
+            <Divider style={{marginVertical: 10}}/>
+            <View style={{paddingHorizontal: 20}}>
+                <Text style={material.headline}>Metadata:</Text>
+                <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                    <Text style={material.subheading}>Primary Spirit</Text>
+                    <View style={{flex: 1}}></View>
+                    <Dropdown values={Object.values(Spirits)} style={{width: 150}} placeholder='Select' selectedValue={primarySpirit} onValueChange={setPrimarySpirit} />
                 </View>
-                <Divider style={{marginVertical: 10}}/>
-                <View style={{paddingHorizontal: 20}}>
-                    <Text style={material.headline}>Metadata:</Text>
-                    <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                        <Text style={material.subheading}>Primary Spirit</Text>
-                        <View style={{flex: 1}}></View>
-                        <Dropdown values={Object.values(Spirits)} style={{width: 150}} placeholder='Select' selectedValue={primarySpirit} onValueChange={setPrimarySpirit} />
-                    </View>
-                    <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                        <Text style={material.subheading}>Method of Prep</Text>
-                        <View style={{flex: 1}}></View>
-                        <Dropdown values={Object.values(Methods)} style={{width: 150}} placeholder='Select' selectedValue={method} onValueChange={setMethod} />
-                    </View>
-                    <Text style={material.subheading}>Drink Icon</Text>
-                    <ButtonGroup
-                        buttons = {Object.values(drinkIcons).map((source) => <Image source={source} style={{width: 20, height: 20}} />)}
-                        selectedIndex = {selectedIcon}
-                        onPress = {setSelectedIcon}
-                    />
+                <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                    <Text style={material.subheading}>Method of Prep</Text>
+                    <View style={{flex: 1}}></View>
+                    <Dropdown values={Object.values(Methods)} style={{width: 150}} placeholder='Select' selectedValue={method} onValueChange={setMethod} />
                 </View>
-                <Divider style={{marginVertical: 10}}/>
-                <View style={{paddingHorizontal: 20}}>
-                    <Text style={material.headline}>Ingredients:</Text>
-                    {ingredientRows}
-                    <View style={{flexDirection:'row-reverse', marginTop: 10}}>
-                        <TouchableOpacity onPress={() => {_addIngredient()}}>
-                            <Ionicons name='ios-add-circle-outline' size={30} color='gray' />
-                        </TouchableOpacity>
-                    </View>
+                <Text style={material.subheading}>Drink Icon</Text>
+                <ButtonGroup
+                    buttons = {Object.values(drinkIcons).map((source) => <Image source={source} style={{width: 20, height: 20}} />)}
+                    selectedIndex = {selectedIcon}
+                    onPress = {setSelectedIcon}
+                />
+            </View>
+            <Divider style={{marginVertical: 10}}/>
+            <View style={{paddingHorizontal: 20}}>
+                <Text style={material.headline}>Ingredients:</Text>
+                {ingredientRows}
+                <View style={{flexDirection:'row-reverse', marginTop: 10}}>
+                    <TouchableOpacity onPress={() => {_addIngredient()}}>
+                        <Ionicons name='ios-add-circle-outline' size={30} color='gray' />
+                    </TouchableOpacity>
                 </View>
-                <Divider style={{marginVertical: 10}}/>
-                <View style={{paddingHorizontal: 20}}>
-                    <Text style={material.headline}>Instructions:</Text>
-                    <TextInput
-                        multiline
-                        numberOfLines = {4}
-                        value = {instructions}
-                        onChangeText = {(value) => {setInstructions(value)}}
-                        style = {[material.body1, {minHeight: 80, maxHeight: 120}]}
-                        textAlignVertical = 'top'
-                        placeholder = 'Type your instructions here'
-                    />
-                </View>
-            </ScrollView>
-        </KeyboardAvoidingView>
+            </View>
+            <Divider style={{marginVertical: 10}}/>
+            <View style={{paddingHorizontal: 20}}>
+                <Text style={material.headline}>Instructions:</Text>
+                <TextInput
+                    multiline
+                    numberOfLines = {4}
+                    value = {instructions}
+                    onChangeText = {(value) => {setInstructions(value)}}
+                    style = {[material.body1, {minHeight: 80, maxHeight: 120}]}
+                    textAlignVertical = 'top'
+                    placeholder = 'Type your instructions here'
+                />
+            </View>
+        </KeyboardAwareScrollView>
     )
 }
 
