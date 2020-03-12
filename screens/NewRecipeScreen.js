@@ -27,6 +27,7 @@ export default function NewRecipeScreen(props) {
             instructions: instructions,
             ingredients: ingredients,
             key: drinkName,
+            isCustom: true,
         }
     }
     const _saveRecipeObject = () => {

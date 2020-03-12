@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, Dimensions } from 'react-native'
+import { View, Text, Image, Dimensions, Button } from 'react-native'
 import { material } from 'react-native-typography'
 import styles from '../style/style'
 import { Divider } from 'react-native-elements'
@@ -24,4 +24,7 @@ export default function DetailScreen(props) {
 
 DetailScreen.navigationOptions = ({navigation}) => ({
     title: navigation.getParam('recipe').title,
+    headerRight: () => {
+        return navigation.getParam('recipe').isCustom ? <Button title='Delete' onPress={()=>{}} /> : null
+    }
 })
