@@ -89,6 +89,15 @@ export default function HomeScreen(props) {
                 containerStyle={styles.listItemCell}
                 leftIcon={{name:'playlist-edit', type:'material-community', size: 30}}
             />
+            <ListItem
+                Component={TouchableOpacity}
+                onPress={() => {props.navigation.navigate('Detail', {recipe: allRecipes[Math.floor(Math.random() * allRecipes.length)]})}}
+                title='Surprise Me!'
+                bottomDivider
+                chevron
+                containerStyle={styles.listItemCell}
+                leftIcon={{name:'random', type:'font-awesome', size: 30}}
+            />
         </View>
     )
 }
