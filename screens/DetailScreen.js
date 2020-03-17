@@ -25,6 +25,6 @@ export default function DetailScreen(props) {
 DetailScreen.navigationOptions = ({navigation}) => ({
     title: navigation.getParam('recipe').title,
     headerRight: () => {
-        return navigation.getParam('recipe').isCustom ? <Button title='Delete' onPress={()=>{}} /> : null
+        return navigation.getParam('recipe').isCustom ? <Button title='Delete' onPress={()=>{navigation.navigate('Home', {delete: navigation.getParam('recipe')})}} /> : null
     }
 })

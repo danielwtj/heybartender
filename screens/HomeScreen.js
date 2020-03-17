@@ -50,6 +50,18 @@ export default function HomeScreen(props) {
         setCustomRecipes([...customRecipes, recipe])
         setAllRecipes([...allRecipes, recipe])
     }
+    // Delete recipe
+    // Hook to recognize recipe to delete
+    useEffect(() => {
+        if(props.navigation.state.params?.delete) {
+            _deleteRecipe(props.navigation.state.params.delete)
+        }
+    }, [props.navigation.state.params?.delete])
+    // Function to delete recipe and save
+    const _deleteRecipe = (recipe) => {
+        setAllRecipes(allRecipes.filter(value => (value !== recipe)))
+        setCustomRecipes(customRecipes.filter(value => (value !== recipe)))
+    }
     //Render screen
     return (
         <View style={styles.container}>
