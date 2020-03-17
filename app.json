@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Hey, Bartender!",
+    "name": "Spiritual",
     "slug": "heybartender",
     "privacy": "public",
     "sdkVersion": "36.0.0",
@@ -10,12 +10,12 @@
     ],
     "version": "0.2.0",
     "orientation": "portrait",
-    "icon": "./assets/OliveLogo.png",
-    "primaryColor": "#f8debd",
+    "icon": "./assets/logo.png",
+    "primaryColor": "#546e7a",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#f8debd"
+      "backgroundColor": "#eceff1"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

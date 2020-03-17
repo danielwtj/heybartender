@@ -12,7 +12,7 @@ const MainStack = createStackNavigator({
   Home: {
     screen: HomeScreen,
     navigationOptions: {
-      title: 'Bartender\'s Pocket Guide'
+      title: 'Spiritual'
     }
   },
   RecipeList: {
