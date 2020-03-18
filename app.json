@@ -25,10 +25,12 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.danielwthompson.heybartender"
+      "bundleIdentifier": "com.danielwthompson.heybartender",
+      "buildNumber": "0.2.0b2"
     },
     "android": {
-      "package": "com.danielwthompson.heybartender"
+      "package": "com.danielwthompson.heybartender",
+      "versionCode": "0.2.0b2"
     }
   }
 }
