@@ -110,6 +110,15 @@ export default function HomeScreen(props) {
                 containerStyle={styles.listItemCell}
                 leftIcon={{name:'random', type:'font-awesome', size: 30}}
             />
+            <ListItem
+                Component={TouchableOpacity}
+                onPress={() => {props.navigation.navigate('About')}}
+                title='About Spiritual'
+                bottomDivider
+                chevron
+                containerStyle={styles.listItemCell}
+                leftIcon={{name:'ios-information-circle-outline', type:'ionicon', size: 30}}
+            />
         </View>
     )
 }
