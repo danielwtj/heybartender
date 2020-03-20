@@ -8,7 +8,7 @@ export default function DetailScreen(props) {
     const recipe = props.navigation.getParam('recipe')
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/comingsoon.jpg')} style={{width: Dimensions.get('window').width, height: Dimensions.get('window').width*.66}} />
+            <Image source={recipe.image || require('../assets/comingsoon.jpg')} style={{width: Dimensions.get('window').width, height: Dimensions.get('window').width*.66}} />
             <View style={{paddingHorizontal: 20}}>
                 <Text style={material.headline}>Ingredients:</Text>
                 {recipe.ingredients.map((ingredient) => <View key={ingredient.name} style={{flexDirection: 'row', alignItems: 'center'}}><Text style={material.body2}>{ingredient.quantity} {ingredient.unit} </Text><Text style={material.body1}>{ingredient.name}</Text></View>)}    

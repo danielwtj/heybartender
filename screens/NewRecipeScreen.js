@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Button, Image, ScrollView, KeyboardAvoidingView } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Button, Image } from 'react-native'
 import { material } from 'react-native-typography'
 import styles from '../style/style'
 import IngredientRow from '../components/IngredientRow'
@@ -8,6 +8,7 @@ import Dropdown from '../components/Dropdown'
 import { Spirits, Methods } from '../assets/standardRecipes'
 import { ButtonGroup, Divider } from 'react-native-elements'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import * as ImagePicker from 'expo-image-picker'
 import drinkIcons from '../assets/drinkIcons'
 
 export default function NewRecipeScreen(props) {
@@ -18,12 +19,14 @@ export default function NewRecipeScreen(props) {
     const [selectedIcon, setSelectedIcon] = useState()
     const [method, setMethod] = useState('')
     const [primarySpirit, setPrimarySpirit] = useState('')
+    const [drinkImage, setDrinkImage] = useState(null)
     const _makeRecipeObject = () => {
         return {
             title: drinkName,
             method: method,
             primarySpirit: primarySpirit,
             icon: Object.keys(drinkIcons)[selectedIcon],
+            image: drinkImage,
             instructions: instructions,
             ingredients: ingredients,
             key: drinkName,
@@ -45,6 +48,17 @@ export default function NewRecipeScreen(props) {
             result[index] = ingredient
             return result
         })
+    }
+    const _openImagePickerAsync = async () => {
+        let permissionResult = await ImagePicker.requestCameraRollPermissionsAsync()
+        if (permissionResult === false) {
+            alert('Permission to access your camera roll is required for this feature. Please visit Settings and grant camera roll permissions.')
+            return
+        }
+        let pickerResult = await ImagePicker.launchImageLibraryAsync()
+        if (pickerResult.cancelled === true)
+            return
+        setDrinkImage({uri: pickerResult.uri})
     }
     useEffect(() => {
         props.navigation.setParams({save: _saveRecipeObject})
@@ -74,6 +88,10 @@ export default function NewRecipeScreen(props) {
                     selectedIndex = {selectedIcon}
                     onPress = {setSelectedIcon}
                 />
+                <Text style={material.subheading}>Drink Image</Text>
+                <TouchableOpacity onPress={() => {_openImagePickerAsync()}}>
+                    <Image source={drinkImage || require('../assets/comingsoon.jpg')} style={{width:150, height: 100, alignSelf: 'flex-end'}} />
+                </TouchableOpacity>
             </View>
             <Divider style={{marginVertical: 10}}/>
             <View style={{paddingHorizontal: 20}}>

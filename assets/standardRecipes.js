@@ -1,3 +1,5 @@
+import drinkImages from './drinkImages/drinkImages'
+
 export const Units = {
     BARSPOON: 'Barspoon',
     OUNCE: 'Ounce',
@@ -29,6 +31,7 @@ const recipes = [
         key: '0',
         title: 'Old Fashioned',
         icon: 'rocks',
+        image: drinkImages.oldFashioned,
         method: Methods.STIRRED,
         primarySpirit: Spirits.WHISKEY,
         ingredients: [
